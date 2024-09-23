@@ -220,14 +220,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98271964}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc6c7ae57d4d5745a9183936441342c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   followingTarget: {fileID: 1305052722}
-  parallaxStrength: 0.1
-  disableVertivalParallax: 0
+  parallaxStrength: 0.5
+  disableVertivalParallax: 1
 --- !u!1 &155340468
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -307,8 +307,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 288697589
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &155340472
 RectTransform:
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_TrackedObjectOffset: {x: 0, y: 1.38, z: 0}
   m_LookaheadTime: 0.5
   m_LookaheadSmoothing: 6
   m_LookaheadIgnoreY: 0
@@ -510,13 +510,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340535143}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc6c7ae57d4d5745a9183936441342c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   followingTarget: {fileID: 1305052722}
-  parallaxStrength: 0.1
+  parallaxStrength: 1
   disableVertivalParallax: 0
 --- !u!4 &466825312 stripped
 Transform:
@@ -667,7 +667,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.71, y: -1.9, z: -17.974785}
+  m_LocalPosition: {x: -5.71, y: -0.52, z: -17.974785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -799,14 +799,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592219993}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc6c7ae57d4d5745a9183936441342c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   followingTarget: {fileID: 1305052722}
-  parallaxStrength: 0.1
-  disableVertivalParallax: 0
+  parallaxStrength: 0.8
+  disableVertivalParallax: 1
 --- !u!4 &605641565 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4738513089725451955, guid: a588f74da36567943871c68c52edae25, type: 3}
@@ -19246,14 +19246,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677345515}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc6c7ae57d4d5745a9183936441342c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   followingTarget: {fileID: 642240739}
-  parallaxStrength: 0
-  disableVertivalParallax: 0
+  parallaxStrength: 0.2
+  disableVertivalParallax: 1
 --- !u!1 &715371828
 GameObject:
   m_ObjectHideFlags: 0
@@ -19288,8 +19288,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -244.5, y: -168.8}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -620.9746, y: 407.25378}
+  m_SizeDelta: {x: 387.8172, y: 83.0558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &715371830
 MonoBehaviour:
@@ -19311,7 +19311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Coins 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19338,8 +19338,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80.68
+  m_fontSizeBase: 80.68
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19480,14 +19480,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903351841}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc6c7ae57d4d5745a9183936441342c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   followingTarget: {fileID: 1305052722}
-  parallaxStrength: 0.6
-  disableVertivalParallax: 0
+  parallaxStrength: 0.4
+  disableVertivalParallax: 1
 --- !u!1001 &915115218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19691,7 +19691,7 @@ Transform:
   m_GameObject: {fileID: 1305052719}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.71, y: -1.9, z: -17.974785}
+  m_LocalPosition: {x: -5.71, y: -0.52, z: -17.974785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19790,7 +19790,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306036816}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc6c7ae57d4d5745a9183936441342c, type: 3}
   m_Name: 
@@ -19895,14 +19895,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452288684}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc6c7ae57d4d5745a9183936441342c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   followingTarget: {fileID: 1305052722}
-  parallaxStrength: 0.1
-  disableVertivalParallax: 0
+  parallaxStrength: 0.6
+  disableVertivalParallax: 1
 --- !u!4 &1496418091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4738513089725451955, guid: a588f74da36567943871c68c52edae25, type: 3}
@@ -20234,13 +20234,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028600268}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc6c7ae57d4d5745a9183936441342c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   followingTarget: {fileID: 1305052722}
-  parallaxStrength: 0.1
+  parallaxStrength: 1
   disableVertivalParallax: 0
 --- !u!1001 &437443262155221445
 PrefabInstance:
@@ -20257,7 +20257,7 @@ PrefabInstance:
     - target: {fileID: 3614759144145427268, guid: 34e6d63f71402e24ca1c402f11e7e4e9, type: 3}
       propertyPath: coinsText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 715371830}
     - target: {fileID: 3614759144145427268, guid: 34e6d63f71402e24ca1c402f11e7e4e9, type: 3}
       propertyPath: wallJumpForce
       value: 5
