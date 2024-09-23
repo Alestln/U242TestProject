@@ -34,8 +34,6 @@ public class ParallaxBehaviour : MonoBehaviour
 
         targetPreviousPosition = followingTarget.position;
 
-        transform.position = delta * parallaxStrength;
-
-        Debug.Log($"{gameObject.name}: {delta}");
+        transform.position += delta * parallaxStrength;
     }
 }
