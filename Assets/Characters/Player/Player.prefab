@@ -133,14 +133,6 @@ MonoBehaviour:
     m_ActionId: 31ffd31b-4f7f-41af-9dbe-060c7fe56f7b
     m_ActionName: Player/Move[/DualSenseGamepadHID/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 938dfa5d-b248-4d7b-b199-cd8da4718619
-    m_ActionName: Player/Look[/DualSenseGamepadHID/rightStick,/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5edec726-8216-4428-af7b-f42f2557d424
-    m_ActionName: Player/Fire[/DualSenseGamepadHID/rightTrigger,/Mouse/leftButton]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3614759144145427268}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
@@ -157,46 +149,6 @@ MonoBehaviour:
     m_ActionId: 6d90dcaf-a632-499c-9212-0af43efce581
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 91769c95-c572-4c91-992a-39affcd4b1ce
-    m_ActionName: UI/Navigate[/DualSenseGamepadHID/leftStick/up,/DualSenseGamepadHID/rightStick/up,/DualSenseGamepadHID/leftStick/down,/DualSenseGamepadHID/rightStick/down,/DualSenseGamepadHID/leftStick/left,/DualSenseGamepadHID/rightStick/left,/DualSenseGamepadHID/leftStick/right,/DualSenseGamepadHID/rightStick/right,/DualSenseGamepadHID/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a2586493-219d-498e-a966-c1cb9efdf146
-    m_ActionName: UI/Submit[/Keyboard/enter,/DualSenseGamepadHID/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: fb7806ad-3ccb-4569-ae1f-d0b7ab1bc676
-    m_ActionName: UI/Cancel[/Keyboard/escape,/DualSenseGamepadHID/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c19b95bc-d8a0-44c1-bf1e-0c92988c32c2
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9c58511f-a361-4735-b147-e8be7bcc126c
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 17421f40-6608-4363-afd5-43042f9cd66e
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 20fee354-2f28-4ff7-a22f-906c60430f73
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ebb43734-37f3-49b9-a760-dcdcf69e2084
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b4c47db3-086b-4302-937f-321d4fe651c8
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7bbc0d09-4cdd-48b7-96c8-b7ed1c30de0b
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3614759144145427268}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
@@ -212,8 +164,24 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e3b3c1cf-0543-4c1b-b702-eb35b6efad1d
     m_ActionName: Player/Run[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3614759144145427268}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnOpenInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8bc2acfe-ca01-4a81-b712-822534abcdf0
+    m_ActionName: UI/OpenInventory[/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -317,6 +285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81a9f1e7486233428228bbe74b8c285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinsText: {fileID: 0}
+  hpBar: {fileID: 0}
   walkSpeed: 10
   runSpeed: 15
   jumpSpeed: 7

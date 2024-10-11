@@ -1,7 +1,7 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
 public class PlayerController : MonoBehaviour
@@ -12,7 +12,10 @@ public class PlayerController : MonoBehaviour
     private AnimationController animationController;
 
     [SerializeField]
-    private TextMeshProUGUI coinsText;
+    private Text coinsText;
+
+    [SerializeField]
+    private Image hpBar;
 
     [Header("Stats")]
 
@@ -52,6 +55,10 @@ public class PlayerController : MonoBehaviour
 
     private int coins = 0;
 
+    private int currentHp = 50;
+
+    private float maxHp = 100;
+
     private void Awake()
     {
         touchingDirections = GetComponent<TouchingDirections>();
@@ -61,6 +68,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        UpdateHpBarUI();
         UpdateCoinsUI(coins);
     }
 
@@ -80,6 +88,17 @@ public class PlayerController : MonoBehaviour
     private void UpdateCoinsUI(int value)
     {
         coinsText.text = $"Coins: {value}";
+    }
+
+    public void UpdateHp(int value)
+    {
+        currentHp += value;
+        UpdateHpBarUI();
+    }
+
+    private void UpdateHpBarUI()
+    {
+        hpBar.fillAmount = Mathf.Clamp(currentHp / maxHp, 0f, 1f);
     }
 
     private void HandleMovement()
@@ -169,6 +188,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
         rigidBody.AddForce(dir * jumpSpeed, ForceMode2D.Impulse);
+        UpdateHp(-10);
     }
 
     private void WallJump()
