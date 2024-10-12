@@ -1,25 +1,57 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InventoryManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject inventoryPanel;
+    public static InventoryManager Instance;
 
     [SerializeField]
-    private Transform inventorySlotsPanel;
+    private GameObject inventoryPanel;
 
     private bool menuActivated;
 
     [SerializeField]
     private ItemSlot slotPrefab;
 
-    private Dictionary<string, ItemSlot> inventorySlots = new Dictionary<string, ItemSlot>();
+    [SerializeField]
+    private RectTransform slotsParent;
+
+    [SerializeField]
+    private ItemDetailsPanel itemDetailsPanel;
+
+    [SerializeField]
+    private int slotCount;
+
+    private List<ItemSlot> itemSlots = new List<ItemSlot>();
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
         inventoryPanel.SetActive(menuActivated);
+        InitializeSlots();
+    }
+
+    private void InitializeSlots()
+    {
+        for (var i = 0; i < slotCount; i++)
+        {
+            ItemSlot newSlot = Instantiate(slotPrefab, slotsParent);
+            newSlot.ClearSlot();
+            itemSlots.Add(newSlot);
+        }
     }
 
     public void OnOpen(InputAction.CallbackContext context)
@@ -32,17 +64,36 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void AddItem(Item item)
+    public void AddItem(ItemDataSO itemData, int quantity)
     {
-        if (inventorySlots.TryGetValue(item.Name, out ItemSlot existingSlot))
+        foreach (var slot in itemSlots)
         {
-            existingSlot.AddQuantity(item.Quantity);
+            if (slot.ItemData != null && slot.ItemData == itemData)
+            {
+                slot.AddQuantity(quantity);
+                return;
+            }
         }
-        else
+
+        foreach (var slot in itemSlots)
         {
-            ItemSlot newSlot = Instantiate(slotPrefab, inventorySlotsPanel.transform);
-            newSlot.AddItem(item);
-            inventorySlots[item.Name] = newSlot;
+            if (slot.ItemData == null)
+            {
+                slot.SetItem(itemData, quantity);
+                return;
+            }
         }
+
+        Debug.Log("Нет доступных слотов для добавления предмета: " + itemData.itemName);
+    }
+
+    public void ShowItemDetails(ItemDataSO itemData)
+    {
+        itemDetailsPanel.DisplayItemDetails(itemData);
+    }
+
+    public void ClearItemDetails()
+    {
+        itemDetailsPanel.ClearDetails();
     }
 }

@@ -1,45 +1,51 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemSlot : MonoBehaviour
+public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
+    public ItemDataSO ItemData { get; private set; }
+
     [SerializeField]
     private Image itemImage;
 
     [SerializeField]
     private TMP_Text quantityText;
 
-    private Item storedItem;
-
-    public void AddItem(Item item)
+    public void SetItem(ItemDataSO itemData, int quantity)
     {
-        storedItem = item;
-        UpdateSlot();
+        ItemData = itemData;
+
+        itemImage.sprite = ItemData.itemSprite;
+        itemImage.enabled = true;
+
+        quantityText.text = quantity.ToString();
+        quantityText.enabled = true;
     }
 
-    private void UpdateSlot()
+    public void ClearSlot()
     {
-        if (storedItem is not null)
-        {
-            itemImage.sprite = storedItem.GetComponent<SpriteRenderer>().sprite;
-            quantityText.text = storedItem.Quantity.ToString();
-            itemImage.enabled = true;
-            quantityText.enabled = true;
-        }
-        else
-        {
-            itemImage.enabled = false;
-            quantityText.enabled = false;
-        }
+        ItemData = null;
+        itemImage.enabled = false;
+        quantityText.enabled = false;
     }
 
     public void AddQuantity(int quantity)
     {
-        if (storedItem != null)
+        if (ItemData != null)
         {
-            storedItem.Quantity += quantity;
-            UpdateSlot();
+            int currentQuantity = int.Parse(quantityText.text);
+            currentQuantity += quantity;
+            quantityText.text = currentQuantity.ToString();
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Left && ItemData != null)
+        {
+            InventoryManager.Instance.ShowItemDetails(ItemData);
         }
     }
 }

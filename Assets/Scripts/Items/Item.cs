@@ -3,34 +3,36 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     [SerializeField]
-    private string name;
+    private ItemDataSO itemData;
 
     [SerializeField]
-    private InventoryManager inventoryManager;
+    private int Quantity;
 
-    public string Name => name;
+    private SpriteRenderer spriteRenderer;
 
-    public int Quantity { get; set; }
-
-    private void Start()
+    private void Awake()
     {
-        var spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
-        if (spriteRenderer is not null)
+        if (itemData != null && spriteRenderer != null)
         {
-            name = spriteRenderer.sprite.name;
+            spriteRenderer.sprite = itemData.itemSprite;
         }
-
-        Quantity = 1;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         var player = collision.gameObject.GetComponent<PlayerController>();
 
-        if (player is not null)
+        if (player != null)
         {
-            inventoryManager.AddItem(this);
+            InventoryManager inventoryManager = FindObjectOfType<InventoryManager>();
+
+            if (inventoryManager != null)
+            {
+                inventoryManager.AddItem(itemData, Quantity);
+            }
+
             Destroy(gameObject);
         }
     }
