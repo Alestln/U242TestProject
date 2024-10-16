@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5386d96cbdd6fc438854cd067eaa2f6, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  itemName: 
-  itemSprite: {fileID: 0}
-  itemDescription: 
-  maxQuantity: 0
+  itemName: Fish
+  itemSprite: {fileID: 21300000, guid: 770c26234725f7140846c89adf9f5da4, type: 3}
+  itemDescription: Fish is a food
+  maxQuantity: 1

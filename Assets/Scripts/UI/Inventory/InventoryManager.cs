@@ -26,18 +26,6 @@ public class InventoryManager : MonoBehaviour
 
     private List<ItemSlot> itemSlots = new List<ItemSlot>();
 
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
-    }
-
     private void Start()
     {
         inventoryPanel.SetActive(menuActivated);
